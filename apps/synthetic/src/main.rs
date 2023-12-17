@@ -1,4 +1,4 @@
-#![feature(integer_atomics)]
+// #![feature(integer_atomics)]
 #![feature(nll)]
 #![feature(test)]
 #[macro_use]
