@@ -65,15 +65,15 @@ enum {
 void mark_task_parked(struct task_struct *tsk)
 {
 	/* borrow the trace field here which is origally used by Ftrace */
-	tsk->trace = PARKED;
+	tsk->ptrace = PARKED;
 }
 
 bool try_mark_task_unparked(struct task_struct *tsk) {
 	bool success = false;
 
-	if (tsk->trace == PARKED) {
+	if (tsk->ptrace == PARKED) {
 		success = true;
-		tsk->trace = UNPARKED;
+		tsk->ptrace = UNPARKED;
 	}
 
 	return success;
